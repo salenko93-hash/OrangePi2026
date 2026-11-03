@@ -2,7 +2,7 @@
 
 Версія коду: `server/version.py`. Тег і публікацію релізу для цього checkout не підтверджено; попередня назва звіту — 3.7.5-rc.1.
 
-- Джерело пакетів обмежене salenko93-hash/OrangePi; перевіряються GitHub asset digest, SHA-256 sidecar, ZIP і кожен файл маніфесту.
+- Джерело пакетів обмежене salenko93-hash/OrangePi2026; перевіряються GitHub asset digest, SHA-256 sidecar, ZIP і кожен файл маніфесту.
 - Оновлення потребує явного підтвердження точної версії; повтор або downgrade через apply заблоковано. Перед зміною коду перевіряється приватний backup локальних даних і медіа; наявний supervisor виконує health-check та автоматичний відкат коду.
 - Додано ручний rollback, журнал, read-only SSH preflight і PowerShell-інсталятор, який за замовчуванням лише перевіряє. Робочі дані не перезаписуються та не отримують рекурсивного виправлення прав.
 - Наявні Windows/POSIX тести та end-to-end тест оновлення/rollback на тимчасовому Linux fixture. У цьому checkout додано мінімальний CI Windows/Ubuntu (Python 3.12, Node.js 22): `python -B VERIFY_PROJECT.py`. Запуск GitHub Actions у межах цього виправлення не проводився; попередню заяву про PR #1 неможливо перевірити без Git metadata.
