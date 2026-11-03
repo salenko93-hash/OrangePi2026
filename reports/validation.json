@@ -1,0 +1,152 @@
+{
+  "version": "3.7.4",
+  "date": "2026-10-30",
+  "target": "Orange Pi PC / Allwinner H3 / 1 GB / armhf",
+  "observed_user_os": "Armbian Community 26.11.0-trunk.108 / Ubuntu Resolute / kernel 6.18.57-current-sunxi",
+  "target_host": "192.168.0.160",
+  "ssh_user": "admin",
+  "unit_tests_passed": 109,
+  "javascript_runtime_checks_passed": 8,
+  "javascript_files_checked": 16,
+  "browser_security_checks_passed": 9,
+  "browser_safety_checks_passed": 4,
+  "browser_orangepi_profile_checks_passed": 4,
+  "generated_systemd_unit_syntax_checked": 8,
+  "canonical_initial_data_files_unchanged": 8,
+  "tested_runtime": "Cloud Debian 13 x86_64; Python 3.13; Chromium; isolated nginx 1.26.3",
+  "webkit_checks": {
+    "native_armhf_packages": "Ubuntu Resolute main/universe package indexes include gir1.2-webkit-6.0 2.52.0-1, GTK4 4.22.2, Cage 0.2.1 and media packages",
+    "actual_gi_import": "passed with extracted Debian WebKitGTK 2.52.6 and GTK4 4.18.6 libraries on x86_64; no host package installation",
+    "actual_settings": "passed on Xvfb: no page cache/devtools, autoplay without gesture, software compositing, WebsitePolicies.ALLOW, document-viewer context",
+    "full_webview_render": "not run: cloud user namespaces have read-only UID mapping and isolated library libexec paths are not installed into the host OS",
+    "cage_output_management": "Upstream Cage v0.2.1 exposes wlr-output-management; owner logs confirm actual advertised HDMI 720p selection, and a photo confirms the holiday page after selecting a single output"
+  },
+  "passed": [
+    "Existing role/session/CSRF/XSS/device-token/media-quota/OTA-signature and recovery regressions",
+    "Current IP applied to TLS input and mobile QR configuration; custom domain and integration tokens retained",
+    "Preflight refuses x86_64/aarch64 and older OS images before service changes",
+    "Kiosk navigation denies remote origins, local administration and file URIs",
+    "HDMI selector never invents a mode not advertised by the monitor",
+    "720p lite browser profile and holiday/weekend preview controls checked without page errors",
+    "Real nginx HTTPS CA/SAN validation, secure cookies and blocked remote local-token bootstrap",
+    "Python/Ruff/shell/JavaScript and generated systemd unit syntax",
+    "Source defaults contain no role keys or integration tokens; known sample sync URLs removed",
+    "Kiosk unit forbids new privileges and clears ambient capabilities; default bounding set avoids early file-capability exec EPERM",
+    "Real profile preparation makes every parent private/writable and refuses linked homes/parents without changing external targets",
+    "Standalone repair embeds the same canonical safe profile implementation; its shell/heredoc syntax checked",
+    "Actual Linux child capability clearing plus root/failure-before-GI regressions",
+    "Canonical embedded browser host checked; no sandbox disabling or OS binary changes",
+    "Restart-loop false-positive checks and 20-second process-stability probe",
+    "Regression rejects premature fullscreen; real GTK/Cage protocol probe maps the actual production window helper",
+    "Exact one-line sed field patch checked against 3.7.2 host: valid Python, preserved cap guard and byte-exact backup",
+    "Unconfigured external sync is local mode, preserves live data, and does not raise a false health alert; configured failures remain visible"
+  ],
+  "not_run": [
+    "Full privileged apt/systemd/PAM/Armbian installation on the physical Orange Pi",
+    "Physical cold-start cursor fix v3 and full 3.7.4 installation on GTK4.22/Cage0.2.1/wlroots0.19; holiday page rendering and ARM32 capability clearing were confirmed by the owner",
+    "Windows PowerShell execution and Windows certificate trust UI",
+    "Physical HDMI/audio/video performance, actual RAM use and CPU temperature",
+    "The users SSH/firewall/router security, power loss or SD-card faults",
+    "Active scanning or sustained load on the physical board"
+  ],
+  "release_verification": "Source passed 109 Python tests, 8 JavaScript runtime checks, 16 JavaScript syntax checks, 17 browser checks, 8 systemd unit syntax checks and both repair payload checks. Release builder verifies ZIP CRC and per-file SHA256; unpacked verification is recorded in artifact metadata.",
+  "physical_370_observations": {
+    "source": "User-provided CHECK_ORANGEPI output, 2026-10-30 09:53–09:54",
+    "backend": "Healthy 3.7.0, nginx/watchdog active",
+    "graphics": "Mali400/Lima, GLES2 Mesa 26.0.8-1ubuntu0.3 initialized",
+    "hdmi": "HDMI-A-1 detected; advertised 1280x720@60 selected successfully",
+    "failure": "WebKit kiosk restarted with status 134 and bwrap: Unexpected capabilities but not setuid, old file caps config?",
+    "cache": "Mesa could not create .cache/mesa_shader_cache because a parent directory was not writable",
+    "fix_result": "Awaiting user verification of the 3.7.1 repair on the physical board"
+  },
+  "physical_371_observations": {
+    "result": "Owner reports black TV after 3.7.1 repair",
+    "journal": "bwrap Unexpected capabilities continued; service config NoNewPrivileges=yes alone did not demonstrate stable display",
+    "file_capability_query": "getcap printed no entries for /usr/bin/bwrap, /usr/bin/cage and /usr/bin/python3",
+    "runtime_query": "MainPID was 0 between restarts, so no actual runtime capability snapshot was obtained",
+    "new_fix_result": "Awaiting owner verification of 3.7.2"
+  },
+  "runtime_privilege_check": {
+    "actual_linux_child": "Passed real capset/prctl on cloud Linux x86_64: verified zero CapInh/CapPrm/CapEff/CapAmb and NoNewPrivs=1 without GI",
+    "failure_paths": "Root and privilege setup failure are rejected before GI loads",
+    "repair_payload": "Canonical host bytes embedded, root-owned host replaced atomically, previous file preserved, dedicated kiosk sessions terminated",
+    "stability": "20 seconds of stable MainPID/NRestarts required; active restart loop rejected in regression tests",
+    "limitations": "ARM32 capability clearing and holiday page rendering were confirmed by the owner; cold-start cursor v3 and physical audio still require verification"
+  },
+  "physical_372_observations": {
+    "source": "Owner-provided Windows PowerShell 5.1 repair log, 2026-10-30 11:19",
+    "privilege_fix": "Confirmed on ARM32 in preflight and actual browser: all capability sets zero after capset/prctl, NoNewPrivs=1",
+    "initial_browser_caps": "0000000800000000 in inheritable/permitted/effective/ambient (CAP_WAKE_ALARM)",
+    "remaining_failure": "Cage/wlroots aborts in wlr_xdg_surface_schedule_configure: Assertion surface->initialized",
+    "display": "Mali400/Lima and HDMI-A-1 1280x720@60 initialized",
+    "373_result": "Owner confirmed stable 3.7.3 process and later holiday page rendering after single-output selection"
+  },
+  "gtk_window_protocol_probe": {
+    "tested_runtime": "Actual GTK4 4.18.6, Cage 0.2.0, wlroots 0.18.2 on x86_64 headless/pixman; uses production present_kiosk_window",
+    "legacy": "Trace contains xdg_toplevel.set_fullscreen before initial wl_surface.commit",
+    "new": "No explicit fullscreen request; window mapped with actual size 1280x720 and return code 0",
+    "not_claimed": "Local older compositor did not reproduce the owner's wlroots 0.19 assertion; exact ARM GTK4.22/Cage0.2.1 full WebKit rendering is pending",
+    "upstream_evidence": "Cage v0.2.1 handle_xdg_toplevel_request_fullscreen lacks initialized guard; current upstream has this guard"
+  },
+  "post_release_single_output": {
+    "owner_observation": "Kiosk stable with NRestarts=0 after 3.7.3, TV shows blue partial/background-only picture",
+    "configuration": "Previous logs expose firmware Unknown-1 and real HDMI-A-1; Cage defaults to extend, changed to -m last for the observed order",
+    "native_geometry_probe": "Two headless outputs: extend mapped a 2560x720 window; last mapped 1280x720",
+    "native_limit": "Cloud Cage 0.2.0 segfaulted during cleanup after the last-mode probe quit. Correct mapped dimensions were observed; this is not a full pass for the target Cage0.2.1/physical display",
+    "targeted_tests_passed": 6,
+    "hardware_result": "Owner photo confirms full holiday page (КАНІКУЛИ / Осінні канікули) on the physical Sharp TV; visible cursor remains."
+  },
+  "post_release_cursor": {
+    "method": "Cursor fix v3: private transparent default theme, explicit environment block before every Cage exec, and WLR_NO_HARDWARE_CURSORS=1",
+    "native_test": "Actual wlroots 0.18 reproduces v1 opaque built-in fallback despite XCURSOR_THEME. v2 resolves NULL/default/left_ptr/named themes to transparent 1x1 pixels for 5 cursor names at 4 sizes; libXcursor decode also passes",
+    "targeted_tests_passed": 10,
+    "hardware_result": "First-start cursor/display issue remains unresolved by owner report; awaiting first-boot diagnostics before any further display change",
+    "project_verifier": "Passed 105 Python tests, 16 JavaScript syntax checks and 8 JavaScript runtime checks",
+    "v1_owner_result": "Owner reports cursor still visible after the first helper",
+    "v2_owner_result": "Owner initially confirmed cursor hidden, then reported it remains after powering on Orange Pi; boot journal has not been supplied",
+    "v3_checks": "Actual launcher process passes all three cursor variables even with an empty or conflicting inherited cursor environment. Upgrade is idempotent, preserves local launcher content and keeps the original backup. Existing native wlroots NULL/default theme checks still pass.",
+    "wlroots_019_option_check": "Extracted Debian wlroots 0.19.3 shared library includes WLR_NO_HARDWARE_CURSORS and the forcing-software-cursors implementation message; physical H3 driver behavior is not claimed verified",
+    "latest_owner_report": "Diagnostic confirms actual server 3.7.4, NRestarts=0, transparent cursor files and WLR_NO_HARDWARE_CURSORS/XCURSOR_* in Cage and browser. Owner reports remaining cursor/first-start issue."
+  },
+  "local_sync_mode": {
+    "behavior": "Empty manifest_url and sheets_url select local mode without network/staging/live data changes. Configured failures still become health alerts.",
+    "unit_tests_passed": 4,
+    "browser_check": "Passed actual admin manual sync and Operations Center API: ЛОКАЛЬНО, no false sync alert, no browser page errors",
+    "owner_configuration": "Owner confirms all content is edited only in the administration panel"
+  },
+  "post_release_display_diagnostic": {
+    "kind": "Read-only CHECK_ORANGEPI.ps1; no service restart, modeset, configuration edit or debugfs mounting",
+    "collects": "Health version, actual per-process whitelisted display environment/capabilities, kernel DRM connector/plane state, wlr-randr --json queried as kiosk UID, first-boot display journals",
+    "does_not_collect": "Application configuration, full process argv or complete process environments",
+    "targeted_tests_passed": 3,
+    "payload_validation": "Shell and embedded Python syntax, canonical source equality and UTF-8 BOM checked",
+    "hardware_run": "V1 owner log received and analyzed; awaiting v2 installed-file and actual-UID cursor decode results",
+    "revision": 2,
+    "additional_checks": "Installed GTK host/native-mode helper fingerprints and feature markers; actual wlroots cursor alpha decoding as the kiosk UID using observed Cage environment, without a Wayland connection; targeted cursor/mode boot log lines",
+    "native_test": "Probe executed against wlroots0.19.3 without DISPLAY/WAYLAND_DISPLAY, all six cursor results transparent"
+  },
+  "post_release_native_hdmi_gtk": {
+    "source": "Owner LyceumTV-HDMI-20261030-145328.txt; owner explicitly denies manually cycling the TV before capture",
+    "verified_on_board": "Server 3.7.4; no restarts; HDMI-A-1 active and firmware Unknown-1 disabled; browser capability sets zero; Cage/browser receive cursor environment; cursor files match canonical transparent bytes",
+    "timeline": "720p/60 set at 13:39:36; spontaneous HDMI disconnect/reconnect 13:39:58–13:40:01 and 13:40:07–13:40:15; final active mode EDID-preferred 1080p/50",
+    "inference_limit": "The sequence supports removing the unsolicited startup modeset; it does not prove the precise kernel/TV link fault or cursor source. Diagnostic snapshot was captured after the link events.",
+    "change": "No default display-mode query/change on startup, 720p explicit opt-in only. Hide cursor on Gtk.ApplicationWindow before present and select transparent GTK cursor theme as well as the compositor theme.",
+    "real_gtk_probe": "GTK4 4.18.6 + Cage0.2.0: actual production helper maps window, cursor name none, GTK cursor theme lyceumtv-invisible; no early fullscreen request. Exact ARM WebKit rendering remains untested.",
+    "wlroots_cursor_probe": "Native wlroots 0.19.3 now also resolves all tested theme/cursor aliases to transparent pixels; old NULL/default theme failure is reproduced in the same regression",
+    "full_project_tests_passed": 113,
+    "javascript_runtime_checks_passed": 8,
+    "repair": "Current FIX_KIOSK_ORANGEPI.ps1 embeds canonical cursor installer, browser host and native display helper; backups, atomic root-owned file replacement and 20-second stability check retained",
+    "hardware_result": "V2 owner log confirms updated GTK host and native-mode helper are installed, native 1080p/50 is stable without disconnect/reconnect, GTK cursor none is logged; visible arrow remains by owner report",
+    "archive": "Published ZIP 3.7.4 remains immutable and does not include this later patch"
+  },
+  "post_release_seat_refresh": {
+    "owner_source": "LyceumTV-HDMI-20261030-152246.txt and fresh photo of mouse arrow",
+    "verified_on_board": "Kiosk UID1001 loads 1x1 fully transparent default/named cursor images from wlroots0.19; installed host markers and runtime GTK cursor theme are correct. No repeated HDMI disconnections in this captured boot.",
+    "change": "After each WebKit LoadEvent.FINISHED, use same-UID Wayland virtual pointer protocol to add a temporary pointer, emit zero relative motion and remove it. Cage updates seat capabilities and unsets its cursor image.",
+    "bounds": "No clicks, scroll, coordinate changes, uinput or root GUI. Private compositor socket must be owned by kiosk UID; request budget 2 seconds; unavailable protocol/error is logged without terminating the browser.",
+    "real_cage_test": "Cage0.2.0/wlroots0.18 + GTK4.18: window mapped, refresh true, protocol trace confirms create, motion(0,0), destroy and seat pointer capability removed. v0.2.1 source has the same pointer-destroy/update_capabilities path. Exact ARM WebKit rendering is not reproduced in cloud.",
+    "full_project_tests_passed": 115,
+    "repair_verification": "20 seconds stable process plus explicit running-browser journal confirmation required; shell/Python payload syntax and canonical-host equality checked",
+    "physical_result": "Awaiting owner verification of this new seat-refresh behavior; no physical cursor success claimed"
+  }
+}
