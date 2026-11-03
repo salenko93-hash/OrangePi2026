@@ -152,7 +152,8 @@ class SecurityUnitTests(unittest.TestCase):
         try:
             self.assertTrue(entered.wait(2))
             with socket.create_connection(server.server_address, timeout=3) as second:
-                second.sendall(b"GET / HTTP/1.0\r\n\r\n")
+                # Rejection happens at accept, before HTTP is read. Writing here
+                # races socket closure and can abort the Windows client receive.
                 self.assertIn(b"503", second.recv(1024))
             release.set()
             self.assertIn(b"200", first.recv(1024))
