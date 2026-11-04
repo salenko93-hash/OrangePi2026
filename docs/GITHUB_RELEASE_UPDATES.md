@@ -1,11 +1,9 @@
 # Official Orange Pi releases and administrator-controlled updates
 
 Only https://github.com/salenko93-hash/OrangePi2026 is accepted. No update is installed
-by checking a release. Runtime version comes from `server/version.py` (currently
-3.7.5). Release publication and tags cannot be confirmed from this checkout,
-which has no Git metadata. No concrete tag is recommended here. Obtain a confirmed
-published tag and its ZIP/checksum assets from the repository owner, then approve
-the exact runtime version returned by check. Stop if that evidence is unavailable.
+by checking a release. Runtime version comes from `server/version.py` (3.7.6).
+The official release tag is `v3.7.6`; use its published ZIP/checksum assets and
+approve the exact runtime version returned by check.
 Physical Orange Pi acceptance has not been performed for this version.
 
 ## Windows installation or upgrade

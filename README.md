@@ -1,10 +1,10 @@
-# OrangePi2026 — LyceumTV 3.7.5 для Orange Pi PC
+# OrangePi2026 — LyceumTV 3.7.6 для Orange Pi PC
 
 Інформаційний TV: розклад, оголошення, тривоги, фото, відео та музика. Цільова платформа — **Orange Pi PC / Allwinner H3 / 1 ГБ RAM / armhf**, Armbian з Ubuntu 24.04+ або Debian 13+, Python 3.10+, systemd. Екран: Cage + WebKitGTK 6.0 / GTK4; медіа: GStreamer і PulseAudio.
 
-Окремий проєкт на основі LyceumTV 3.7.5 для Orange Pi PC. Код, CI та джерело офіційних оновлень: [salenko93-hash/OrangePi2026](https://github.com/salenko93-hash/OrangePi2026). Збережено функції TV, адміністрації, медіа, розкладів, резервування та kiosk. Версію коду визначає [server/version.py](server/version.py).
+Окремий проєкт на основі LyceumTV для Orange Pi PC. Код і джерело офіційних оновлень: [salenko93-hash/OrangePi2026](https://github.com/salenko93-hash/OrangePi2026). Збережено функції TV, адміністрації, медіа, розкладів, резервування та kiosk. Версію коду визначає [server/version.py](server/version.py).
 
-**GitHub Release ще потрібно опублікувати:** для встановлення через Windows потрібні підтверджений тег, ZIP і SHA-256 у цьому репозиторії. Архів «Source code» від GitHub не замінює пакет, створений `tools/build_release.py`. Вихідний код можна перевіряти та збирати локально за інструкцією нижче. Походження й межі перевірки описані в [документі проєкту](docs/ORANGEPI2026.md).
+**Офіційний пакет 3.7.6** публікується як GitHub Release із ZIP та SHA-256, зібраними `tools/build_release.py`. Архів «Source code» від GitHub не замінює цей перевірений пакет. Походження й межі перевірки описані в [документі проєкту](docs/ORANGEPI2026.md).
 
 ## Встановлення й оновлення з Windows
 

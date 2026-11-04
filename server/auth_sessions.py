@@ -8,7 +8,7 @@ import threading
 import time
 
 COOKIE = "lyceumtv_session"
-TTL = 2 * 60 * 60
+TTL = 8 * 60 * 60
 
 
 class Sessions:

@@ -22,7 +22,7 @@ from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "server"))
-from auth_sessions import Sessions, COOKIE
+from auth_sessions import Sessions, COOKIE, TTL
 from http_security import BoundedHTTPServer, RateLimits
 from install_config import migrate
 from media_io import save_stream
@@ -70,6 +70,7 @@ class SecurityUnitTests(unittest.TestCase):
                 self.assertEqual(live.stat().st_mode & 0o777, 0o600)
 
     def test_sessions_expire_revoke_and_invalidate_on_key_rotation(self):
+        self.assertEqual(TTL, 8 * 60 * 60)
         sessions = Sessions()
         cfg = {"admin_key": "private-session-test-key"}
         token = sessions.create("admin", cfg)
@@ -83,7 +84,7 @@ class SecurityUnitTests(unittest.TestCase):
         self.assertEqual(sessions.resolve(cookie, cfg), "")
         token = sessions.create("admin", cfg)
         with patch(
-            "auth_sessions.time.monotonic", return_value=time.monotonic() + 7201
+            "auth_sessions.time.monotonic", return_value=time.monotonic() + TTL + 1
         ):
             self.assertEqual(sessions.resolve(f"{COOKIE}={token}", cfg), "")
 
